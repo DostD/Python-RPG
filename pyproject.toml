@@ -2,7 +2,7 @@
 name = "Python-RPG"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["DostD <dostd956@hsd.k12.or.us>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
