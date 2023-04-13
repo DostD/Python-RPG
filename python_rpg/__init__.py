@@ -1,6 +1,7 @@
 __version__ = '0.1.0'
 
 # Fuctions
+weapon = False
 def showDarkroom():
     directions = ["forward", "backward"]
     print("You see a body of a fellow employee, you bow your head.")
@@ -10,7 +11,7 @@ def showDarkroom():
         print("Options: forward/backward")
         userinput = input()
         if userinput == "forward":
-            print("You made it! you found the control room. Time to make your escape")
+            print("You made it! you found one of the ways to the control room. Time to make your escape")
         elif userinput == "backward":
             showUNIDENTIFIED()
         else:
@@ -66,7 +67,7 @@ def showGoodroom():
             print("...Remember those creepy voices? Well it turns out they are ghost of dead employees... and they what your body")
             print("...and your stuck in a room with them. YOU DIED")
         elif userinput == "left":
-            print("Oh look a sandwich yum, and a lazer sword... you should take that and leave.   Weapon collected")
+            print("Oh look a sandwich yum, and a lazer sword... you should take that and leave.   Weapon Collected")
             print("You go back to the main room")
             weapon = True
             introscene()
@@ -74,8 +75,7 @@ def showGoodroom():
             introscene()
         else:
             print("Please enter a valid option")
-
-        
+      
 def introscene():
     directions = ["left", "right", "forward", "backward"]
     print("You are at a crossroad of 4 options on where to go, where will you go?")
@@ -83,7 +83,7 @@ def introscene():
     while userinput not in directions:
         print("Options: left/right/forward/backward")
         userinput = input()
-        if userinput == "left"():
+        if userinput == "left":
             showUNIDENTIFIED()
         elif userinput == "right":
             showGoodroom()
