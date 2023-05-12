@@ -1,7 +1,17 @@
 __version__ = '0.1.0'
+import introstory
 
 # Fuctions
+def exposite(text:tuple):
+    for paragraph in text:
+    # if not the last paragraph, add a ... (press enter to continue)
+        if paragraph != text[-1]:
+            input(paragraph + " \n\033[3m\033[92mPress enter to continue...\033[0m")
+        else:
+            input(paragraph)
+
 weapon = False
+
 def showDarkroom():
     directions = ["forward", "backward"]
     print("You see a body of a fellow employee, you bow your head.")
@@ -13,11 +23,11 @@ def showDarkroom():
         if userinput == "forward":
             print("You made it! you found one of the ways to the control room. Time to make your escape")
         elif userinput == "backward":
-            showUNIDENTIFIED()
+            showAlien()
         else:
             print("Please enter a valid option")
 
-def showUNIDENTIFIED():
+def showAlien():
     directions = ["right", "left", "backward"]
     print("You see some sort of figure you can't really explain. You are creeped out.")
     print("Where would you like to go?")
@@ -37,7 +47,7 @@ def showUNIDENTIFIED():
 def showHallway():
     actions = ["fight", "flee"]
     global weapon
-    print("You enter into the hallway and see a dark creature. You can try to fight or you can flee.")
+    print("You enter into the hallway and see a Dra'Kesh. You can try to fight or you can flee.")
     print("What will you do?")
     userinput = ""
     while userinput not in actions:
@@ -45,10 +55,10 @@ def showHallway():
         userinput = input()
         if userinput == "fight":
             if weapon:
-                print("You bring out your Lazer Sword that you found and kill the creature. What do you know the creature was blocking")
+                print("You bring out your Lazer Sword that you found and kill the Dra'Kesh. What do you know the Dra'Kesh was blocking")
                 print("the control room, time to get out of here. Congrats you win!")
             else:
-                print("You have no weapon to fight with so you lost the battle and the creature killed you.")
+                print("You have no weapon to fight with so you lost the battle and the Dra'Kesh killed you.")
         elif userinput == "flee":
             introscene()
         else:
@@ -84,24 +94,19 @@ def introscene():
         print("Options: left/right/forward/backward")
         userinput = input()
         if userinput == "left":
-            showUNIDENTIFIED()
+            showAlien()
         elif userinput == "right":
             showGoodroom()
         elif userinput == "forward":
             showHallway()
         elif userinput == "backward":
             print("You just walked into a wall in the same room you are already in... Why?")
-            print("maybe leave the room this time Mr." + name)
+            print("maybe leave the room this time.")
             introscene()
         else:
             print("Please enter a valid option")
-            
 
-# Intro Code
-print("Can't start an adventure without a knowing who you are, now who are you?")
-name = input()
-print("Welcome to the Spaceship Atlas Mr." + name + ".")
-print("If you don't already know we are currently being invaded by... UNIDENTIFIED,")
-print("you need to get out of here by any means necassary Employee")
-print("I suggest finding a way to the control room to get to a escape pod... Off you go!")
-introscene()
+
+if __name__ == "__main__":
+    exposite(introstory.introduction)
+    introscene()
