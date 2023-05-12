@@ -101,15 +101,13 @@ def introscene():
             showHallway()
         elif userinput == "backward":
             print("You just walked into a wall in the same room you are already in... Why?")
-            print("maybe leave the room this time")
+            print("maybe leave the room this time.")
             introscene()
         else:
             print("Please enter a valid option")
-            
 
-# Intro Code
+
+#Intro Code
 if __name__ == "__main__":
     exposite(testintro.introduction)
     introscene()
-
-
